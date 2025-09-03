@@ -2,9 +2,17 @@ spring:
   application:
     name: lv2-final-mission
 
+  flyway:
+    enabled: true
+
+  sql:
+    init:
+      mode: never
+
   jpa:
     open-in-view: false
-
+    hibernate:
+      ddl-auto: none
 api:
   get-holiday:
     base-url: ${HOLIDAY_API_URL}

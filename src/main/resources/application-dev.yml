@@ -1,17 +1,10 @@
 spring:
-  sql:
-    init:
-      mode: always
   datasource:
     url: jdbc:h2:mem:gymbook;MODE=MySQL
   h2:
     console:
       enabled: true
       path: /h2-console
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    defer-datasource-initialization: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect

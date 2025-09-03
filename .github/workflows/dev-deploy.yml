@@ -3,6 +3,8 @@ name: Deploy on Develop Merge
 on:
   push:
     branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
 
 jobs:
   build-and-push:
@@ -32,7 +34,7 @@ jobs:
 
   deploy:
     name: Deploy with Docker Compose
-    runs-on: [self-hosted, dev]
+    runs-on: dev
     needs: build-and-push
 
     steps:
