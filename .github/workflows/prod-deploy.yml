@@ -19,5 +19,13 @@ jobs:
       - name: Pull latest image
         run: sudo docker pull ghcr.io/${{ secrets.REGISTRY_USERNAME }}/final-mission:latest
 
+      - name: Create .env file from GitHub Secrets
+        run: |
+          echo "DB_URL=${{ secrets.DB_URL_PROD }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME_PROD }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD_PROD }}" >> .env
+          echo "HOLIDAY_API_URL=${{ secrets.HOLIDAY_API_URL }}" >> .env
+          echo "HOLIDAY_API_KEY=${{ secrets.HOLIDAY_API_KEY }}" >> .env
+
       - name: Docker Compose Up
         run: sudo docker compose -f compose.prod.yaml up -d
