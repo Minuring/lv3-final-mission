@@ -11,7 +11,8 @@ spring:
 
   jpa:
     open-in-view: false
-
+    hibernate:
+      ddl-auto: none
 api:
   get-holiday:
     base-url: ${HOLIDAY_API_URL}
