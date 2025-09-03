@@ -1,0 +1,18 @@
+spring:
+  sql:
+    init:
+      mode: never
+  datasource:
+    url: jdbc:mysql://${DB_URL}:3306/gymbook
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+api:
+  get-holiday:
+    base-url: ${HOLIDAY_API_URL}
+    service-key: ${HOLIDAY_API_KEY}

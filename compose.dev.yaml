@@ -1,0 +1,10 @@
+services:
+  app:
+    image: ghcr.io/minuring/final-mission:latest
+    container_name: app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - HOLIDAY_API_URL=${HOLIDAY_API_URL}
+      - HOLIDAY_API_KEY=${HOLIDAY_API_KEY}
