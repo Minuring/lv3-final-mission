@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: lv2-final-mission
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:h2:mem:database
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+    open-in-view: false
+
+api:
+  get-holiday:
+    base-url: "http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService/getRestDeInfo"
+    service-key: "xSrbbK33xy8wA8Tcy7oIKWhgyc6qIDBu/oaiZaYZoU6sK9Oe2O4ZV3zZrY7bKklHMoJtqrhYLephXjFG1yhP0A=="
