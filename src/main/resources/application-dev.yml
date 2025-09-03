@@ -15,8 +15,3 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
-
-api:
-  get-holiday:
-    base-url: ${HOLIDAY_API_URL}
-    service-key: ${HOLIDAY_API_KEY}

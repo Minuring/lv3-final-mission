@@ -11,8 +11,3 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-
-api:
-  get-holiday:
-    base-url: ${HOLIDAY_API_URL}
-    service-key: ${HOLIDAY_API_KEY}

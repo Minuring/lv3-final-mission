@@ -22,8 +22,3 @@ spring:
 logging:
   level:
     sql: info
-
-api:
-  get-holiday:
-    base-url: ${HOLIDAY_API_URL}
-    service-key: ${HOLIDAY_API_KEY}
