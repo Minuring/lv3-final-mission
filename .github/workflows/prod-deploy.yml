@@ -20,4 +20,4 @@ jobs:
         run: sudo docker pull ghcr.io/${{ secrets.REGISTRY_USERNAME }}/final-mission:latest
 
       - name: Docker Compose Up
-        run: sudo docker compose up -d
+        run: sudo docker compose -f compose.prod.yaml up -d
