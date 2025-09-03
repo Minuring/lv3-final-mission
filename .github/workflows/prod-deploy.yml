@@ -1,0 +1,23 @@
+name: Deploy on Main Merge
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Deploy with Docker Compose
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.REGISTRY_USERNAME }} --password-stdin
+
+      - name: Pull latest image
+        run: sudo docker pull ghcr.io/${{ secrets.REGISTRY_USERNAME }}/final-mission:latest
+
+      - name: Docker Compose Up
+        run: sudo docker compose up -d
